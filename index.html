@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEB STUDIO</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -12,18 +17,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,700&family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
-      rel="stylesheet"
-    />
 
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="body">
     <header class="page-header">
-      <!-- <div class="container header-container">
+      <div class="container header-container">
         <nav class="nav">
           <a class="logo header-logo" href="./index.html">
             Web<span class="logo-part">Studio</span>
@@ -61,7 +60,24 @@
             </li>
           </ul>
         </address>
-      </div> -->
+      </div> 
+
+      <div class="header-menu">
+
+        <button class="header-menu-close-btn" type="button" >
+          <svg class="close-icon-header" width="8" height="8">
+            <use href="./images/header-btn/symbol-defs.svg"></use>
+          </svg>
+
+
+          <button type="button" class="modal-close-btn">
+            <svg class="close-icon" width="8" height="8">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </button></button>
+
+      </div>
     </header>
 
     <main>
@@ -146,7 +162,7 @@
             <li class="team-item">
               <img
                 class="team-foto"
-                srcset="./images/2x/img-1-x2.jpg 2x"
+                srcset="./images/img-1.jpg 1x, ./images/2x/img-1-x2.jpg 2x"
                 src="./images/img-1.jpg"
                 alt="Foto of Mark Guerrero Product Designer"
                 height="260"
@@ -199,7 +215,7 @@
             <li class="team-item">
               <img
                 class="team-foto"
-                srcset="./images/2x/img-2-2x.jpg 2x"
+                srcset="./images/img-2.jpg 1x, ./images/2x/img-2-x2.jpg 2x"
                 src="./images/img-2.jpg"
                 alt="Foto of Tom Ford Frontend Developer"
                 height="260"
@@ -252,7 +268,7 @@
             <li class="team-item">
               <img
                 class="team-foto"
-                srcset="./images/2x/img-3-2x.jpg 2x"
+                srcset="./images/img-3.jpg 1x, ./images/2x/img-3-x2.jpg 2x"
                 src="./images/img-3.jpg"
                 alt="Foto of Camila Garcia Marketing"
                 height="260"
@@ -306,7 +322,7 @@
             <li class="team-item">
               <img
                 class="team-foto"
-                srcset="./images/2x/img-4-2x.jpg 2x"
+                srcset="./images/img-4.jpg 1x, ./images/2x/img-4-x2.jpg 2x"
                 src="./images/img-4.jpg"
                 alt="Foto of Daniel Wilson UI Designer"
                 height="260"
@@ -451,38 +467,39 @@
 
             <li class="portfolio-item">
               <div class="portfolio-cover-wrap">
-
-                <>
-                  <source
-                    srcset="
-                      ./images/desktopx2/girlx1.jpg 1x,
-                      ./images/girl.jpg  2x
+                <div>
+                  <picture>
+                    <source
+                      media="(min-width: 1158px)"
+                      srcset="
+                      ./images/portfolio/desctop/desc-smartphone-x1.jpg x1,
+                      ./images/portfolio/desctop/desc-smartphone-x1.jpg  2x
                     "
-                    media="(min-width: 1158px)"
-                  />
-                  <source
-                    srcset="
-                    ./images/desktopx2/girlx1.jpg 1x,
-                    ./images/girl.jpg  2x
-                  "
-                    media="(min-width: 768px)"
-                  />
-                  <source
-                    srcset="
-                    ./images/desktopx2/smartphonex2.jpg 1x,
-                    ./images/smartphone.jpg  2x
-                  "
-                    media="(max-width: 767px)"
-                  />
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="
+                        ./images/portfolio/tab/tab-smartphone-x1.jpg 1x,
+                        ./images/portfolio/tab/tab-smartphone-x1.jpg 2x
+                      "
+                    />
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="
+                        ./images/portfolio/mob/mob-smartphone-x1.jpg 1x,
+                        ./images/portfolio/mob/mob-smartphone-x1.jpg 2x
+                      "
+                    />
 
-                <img
-                  class="portfolio-img"
-                  src="./images/smartphone.jpg"
-                  alt="smartphone"
-                  width="360"
-                  height="300"
-                />
-                </picture>
+                    <img
+                      class="portfolio-img"
+                      src="./images/smartphone.jpg"
+                      alt="smartphone"
+                      width="360"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <p class="portfolio-cover-text">
                   14 Stylish and User-Friendly App Design Concepts · Task
@@ -500,30 +517,30 @@
               <div class="portfolio-cover-wrap">
                 <picture>
                   <source
-                    srcset="
-                      ./images/desktopx2/girlx1.jpg 1x,
-                      ./images/girl.jpg  2x
-                    "
                     media="(min-width: 1158px)"
+                    srcset="
+                      ./images/portfolio/desctop/desc-girl-x1.jpg x1,
+                      ./images/portfolio/desctop/desc-girl-x2.jpg 2x
+                    "
                   />
                   <source
-                    srcset="
-                    ./images/desktopx2/girlx1.jpg 1x,
-                    ./images/girl.jpg  2x
-                  "
                     media="(min-width: 768px)"
+                    srcset="
+                    ./images/portfolio/tab/tab-girl-x1.jpg x1,
+                    ./images/portfolio/tab/tab-girl-x1.jpg 2x
+                  "
                   />
                   <source
-                    srcset="
-                    ./images/desktopx2/girlx1.jpg 1x,
-                    ./images/girl.jpg  2x
-                  "
                     media="(max-width: 767px)"
+                    srcset="
+                    ./images/portfolio/mob/mob-girl-x1.jpg x1, 
+                    ./images/portfolio/mob/mob-girl-x2.jpg 2x
+                  "
                   />
 
                   <img
                     class="portfolio-img"
-                    src="./images/girl.jpg"
+                    src="./images/portfolio/imggirl.jpg"
                     alt="girl "
                     width="360"
                     height="300"
@@ -545,8 +562,8 @@
       </section>
     </main>
 
-    <!-- <footer class="footer">
-    <div class="container footer-container">
+    <footer class="footer">
+      <div class="container footer-container">
         <div class="footer-two-part">
           <a class="logo logo-footer" href="./index.html">
             Web<span class="footer-logo-part">Studio</span>
@@ -593,8 +610,7 @@
           </ul>
         </div>
 
-        <!- -subscribe-form" 
-         <div class="wrapper-subscribe-form">
+        <div class="wrapper-subscribe-form">
           <p class="subscribe-text">Subscribe</p>
           <form class="subscribe-form">
             <label class="subscribe-label" for="subscribe">
@@ -614,9 +630,9 @@
               </svg>
             </button>
           </form>
-        </div> 
-      </div> 
-    </footer> -->
+        </div>
+      </div>
+    </footer>
 
     <!-- form  backdrop  -->
 
